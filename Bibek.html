@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Bibek Kumar Patro | Portfolio</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    html { scroll-behavior: smooth;}
+    body { font-family: Inter, sans-serif; background: #253664; color: #fff; }
+    .pulse { animation:pulseGlow 2.3s infinite alternate;}
+    @keyframes pulseGlow {
+      to{ box-shadow: 0 0 48px #43eefdcc, 0 0 18px #7a5fff75;}
+    }
+    .glow-btn, .glow-btn:focus { box-shadow:0 0 8px #43eefdA0,0 0 2px #7a5fff44; }
+    .glow-btn:hover {filter:brightness(1.11) drop-shadow(0 0 8px #43eefd);}
+    .neon-icon:hover { color:#43eefd!important; text-shadow:0 0 12px #43eefd;}
+    .scroll-progress {
+      position:fixed;top:0;left:0;z-index:70;height:5px;background:#43eefd;width:0%;transition:.2s;
+    }
+    .custom-cursor{ pointer-events:none; position:fixed; top:0; left:0; z-index:9999; width:30px; height:30px; border:2px solid #43eefd; border-radius:50%; background:rgba(100,180,255,0.11); mix-blend-mode:exclusion; transition:transform .16s;}
+    .cursor-hover { transform:scale(1.55);}
+    .hero-headline {text-shadow:0 2px 18px #063748c0,0 0 3px #fff;}
+    .hero-type {text-shadow:0 1px 12px #2bd6e1f0,0 0 2px #fff;}
+    #hero::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 64%;
+      transform: translate(-50%,-50%);
+      width: 900px; height: 430px;
+      background: radial-gradient(circle,rgba(118,246,255,0.25) 0%,rgba(37,54,100,0.00) 70%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .section-glass {
+      background: rgba(32,40,62,0.63);
+      backdrop-filter: blur(14px);
+      border-radius: 1.5rem;
+      box-shadow: 0 8px 42px #43eefd25;
+    }
+  </style>
+</head>
+<body>
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+<!-- Custom Cursor -->
+<div id="cursor" class="custom-cursor"></div>
+
+<!-- Navbar -->
+<nav class="w-full fixed top-0 z-50 bg-[#161e2eec] shadow-lg">
+  <div class="container mx-auto flex items-center justify-between py-3 px-4">
+    <div class="font-heading text-xl font-bold text-cyan-300">Bibek Kumar Patro</div>
+    <div class="flex items-center gap-6">
+      <a href="#hero" class="px-3 py-1 font-semibold text-cyan-300 hover:text-cyan-100 transition">Home</a>
+      <a href="#about" class="px-3 py-1 font-semibold hover:text-cyan-100 transition">About</a>
+      <a href="#skills" class="px-3 py-1 font-semibold hover:text-cyan-100 transition">Skills</a>
+      <a href="#projects" class="px-3 py-1 font-semibold hover:text-cyan-100 transition">Projects</a>
+      <a href="#resume" class="px-3 py-1 font-semibold hover:text-cyan-100 transition">Resume</a>
+      <a href="#references" class="px-3 py-1 font-semibold hover:text-cyan-100 transition">References</a>
+      <a href="#contact" class="px-3 py-1 font-semibold hover:text-cyan-100 transition">Contact</a>
+      <button id="darkModeBtn" class="ml-2 p-2 rounded-full bg-[#222b44] text-cyan-300 hover:text-white transition">
+        <i class="fa fa-moon"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="hero" class="relative flex flex-col items-center justify-center min-h-screen text-center select-none overflow-hidden" style="background: linear-gradient(120deg, #253664 55%, #55e5ff 100%);">
+  <div class="relative mb-7 z-10">
+    <img src="O:\Placement\Portfolio\Image\Bibek Kumar.jpg" 
+     alt="Bibek Kumar Patro"
+      style="width:170px;height:170px;object-fit:cover;object-position:50% 0%;border-radius:999px;border:6px solid #fff;box-shadow:0 0 44px #43eefdcc;"
+      class="pulse bg-[#293553]" alt="Bibek Kumar Patro"/>
+  </div>
+  <h1 class="hero-headline text-5xl md:text-6xl font-heading font-bold text-white mb-2 tracking-tight z-10">
+    Bibek Kumar Patro
+  </h1>
+  <div id="typewriter" class="hero-type mb-8 text-2xl md:text-3xl font-semibold text-cyan-100 z-10" style="min-height:2.4rem;"></div>
+  <div class="flex flex-wrap gap-5 justify-center mb-12 z-10">
+    <a href="#projects" class="glow-btn px-6 py-3 bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500 text-black font-bold rounded-xl shadow-lg hover:scale-105 transition">Explore Projects</a>
+    <a href="O:\Placement\Portfolio\File\Bibek_resume_2025.docx" download class="glow-btn px-6 py-3 rounded-xl bg-[#253664]/90 text-cyan-200 font-bold border border-cyan-300 shadow-md text-lg hover:scale-105 transition">Download Resume</a>
+    <a href="https://github.com/Bibek-101/Bibek-kumar" target="_blank" rel="noopener" class="glow-btn px-6 py-3 rounded-xl bg-[#181f3e]/60 text-white text-lg font-bold border border-cyan-800 flex items-center gap-2 hover:scale-105 transition"><i class="fab fa-github neon-icon"></i>GitHub</a>
+    <a href="https://www.linkedin.com/in/bibek-kumar-patro-43435333a" target="_blank" rel="noopener" class="glow-btn px-6 py-3 rounded-xl bg-[#181f3e]/60 text-white text-lg font-bold border border-cyan-800 flex items-center gap-2 hover:scale-105 transition"><i class="fab fa-linkedin neon-icon"></i>LinkedIn</a>
+  </div>
+  <div style="pointer-events:none;position:absolute;left:50%;top:64%;transform:translate(-50%,-50%);width:900px;height:430px;background:radial-gradient(circle,rgba(118,246,255,0.25) 0%,rgba(37,54,100,0.00) 70%);z-index:1;"></div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="container mx-auto px-3 py-20 section-glass" data-aos="fade-up">
+  <div class="flex flex-col md:flex-row items-center gap-8">
+    <div class="shrink-0 relative">
+      <div class="w-44 h-44 rounded-full border-4 border-cyan-300 glass-morph flex items-center justify-center overflow-hidden" style="box-shadow:0 0 32px #43eefd44;">
+        <img src="O:\Placement\Portfolio\Image\Bibek Kumar.jpg" alt="Bibek Kumar Patro" class="object-cover w-full h-full" style="object-position:50% 0%;" />
+      </div>
+    </div>
+    <div class="flex-1">
+      <h2 class="text-3xl font-bold font-heading mb-2 text-cyan-200">About Me</h2>
+      <p class="text-lg mt-2 text-white/90">
+        Dedicated Computer Science Engineer from <b>Hinjilicut, Ganjam, Odisha</b>.<br>
+        Email: <a href="mailto:bibek.patro.101@gmail.com" class="text-cyan-300 hover:underline">bibek.patro.101@gmail.com</a><br>
+        Phone: +91 7205293190<br>
+        Specializing in AI, computer vision, and full stack development. Passionate about building innovative solutions, teamwork, and ongoing learning.
+      </p>
+      <div class="mt-7">
+        <ol class="relative border-l-4 border-cyan-300 pl-8">
+          <li class="mb-7" data-aos="fade-right" data-aos-delay="100">
+            <span class="absolute -left-[26px] h-6 w-6 flex items-center justify-center rounded-full bg-cyan-300 text-black font-bold border-2 border-white shadow">1</span>
+            <div class="text-base font-semibold">Xth – SSV(M), Hinjilicut</div>
+            <div class="text-xs text-white/70">Scored 73%</div>
+          </li>
+          <li class="mb-7" data-aos="fade-right" data-aos-delay="140">
+            <span class="absolute -left-[26px] h-6 w-6 flex items-center justify-center rounded-full bg-cyan-300 text-black font-bold border-2 border-white shadow">2</span>
+            <div class="text-base font-semibold">XII – Science College Hinjilicut</div>
+            <div class="text-xs text-white/70">Scored 82.17%</div>
+          </li>
+          <li data-aos="fade-right" data-aos-delay="180">
+            <span class="absolute -left-[26px] h-6 w-6 flex items-center justify-center rounded-full bg-cyan-300 text-black font-bold border-2 border-white shadow">3</span>
+            <div class="text-base font-semibold">B.Tech in Computer Science & Engineering</div>
+            <div class="text-xs text-white/70">NIST University, Aug 2022–Present</div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="container mx-auto px-3 py-20 section-glass" data-aos="fade-up">
+  <h2 class="text-3xl font-heading font-bold mb-10 text-center text-cyan-200">Skills</h2>
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-7">
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#43eefd" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="35" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">85%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-primary"><i class="fa-brands fa-java mr-1"></i>Java</div>
+    </div>
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#7a5fff" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="19" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">92%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-accent"><i class="fa-brands fa-python mr-1"></i>Python</div>
+    </div>
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#38c9f0" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="43" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">82%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-blue-400">C</div>
+    </div>
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#e4d116" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="33" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">86%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-yellow-400"><i class="fa-brands fa-html5 mr-1"></i>HTML</div>
+    </div>
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#4a89dc" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="43" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">82%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-indigo-300"><i class="fa-brands fa-css3-alt mr-1"></i>CSS</div>
+    </div>
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#e4d116" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="52" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">78%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-yellow-400"><i class="fa-brands fa-js-square mr-1"></i>JavaScript</div>
+    </div>
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#38c9f0" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="48" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">80%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-blue-200"><i class="fa-solid fa-database mr-1"></i>SQL/Oracle/MongoDB</div>
+    </div>
+    <div class="flex flex-col items-center glass-morph p-6 rounded-2xl" data-aos="zoom-in">
+      <div class="relative">
+        <svg width="90" height="90">
+          <circle cx="45" cy="45" r="38" stroke="#172242" stroke-width="9" fill="none"/>
+          <circle cx="45" cy="45" r="38" stroke="#23ffe3" stroke-width="9" fill="none" stroke-dasharray="238.76" stroke-dashoffset="60" stroke-linecap="round"/>
+        </svg>
+        <span class="absolute top-0 left-0 w-full h-full flex items-center justify-center font-bold text-lg text-primary">75%</span>
+      </div>
+      <div class="mt-3 text-lg font-bold text-cyan-200"><i class="fa-solid fa-toolbox mr-1"></i>Frameworks/Tools</div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="container mx-auto px-3 py-20 section-glass" data-aos="fade-up">
+  <h2 class="text-3xl font-heading font-bold mb-10 text-center text-cyan-200">Projects</h2>
+  <div class="grid md:grid-cols-2 gap-9">
+    <div class="glass-morph rounded-xl px-7 py-7 shadow-lg hover:scale-105 transition">
+      <div class="mb-2 text-xl font-bold text-cyan-300">Face Emotion Recognition System</div>
+      <div class="mb-1 text-fuchsia-300 text-xs">Python, TensorFlow, Keras, OpenCV</div>
+      <div class="mb-2 text-white/80 text-sm">Deep learning system for real-time facial emotion recognition, with automated data labeling and personalized UI.</div>
+      <a href="https://github.com/Bibek-101/Face_Emotion_Recoginsation.git" target="_blank" rel="noopener" class="inline-block mt-2 text-cyan-300 bg-[#1b293a]/40 px-3 py-1 rounded-lg border border-cyan-200 hover:bg-cyan-300 hover:text-black">GitHub</a>
+    </div>
+    <div class="glass-morph rounded-xl px-7 py-7 shadow-lg hover:scale-105 transition">
+     <div class="mb-2 text-xl font-bold text-cyan-300">Face Recognition System</div>
+     <div class="mb-1 text-blue-300 text-xs">Python, OpenCV, Deep Learning</div>
+     <div class="mb-2 text-white/80 text-sm">Image/video recognition app to identify individuals and display names using labeled image collections.</div>
+     <a href="https://github.com/Bibek-101/Face-Recognition-System.git" class="inline-block mt-2 text-cyan-300 bg-[#1b293a]/40 px-3 py-1 rounded-lg border border-cyan-200 hover:bg-cyan-300 hover:text-black" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+
+    <div class="glass-morph rounded-xl px-7 py-7 shadow-lg hover:scale-105 transition">
+     <div class="mb-2 text-xl font-bold text-cyan-300">WhatsApp Chat Analysis</div>
+     <div class="mb-1 text-indigo-300 text-xs">Python, Pandas, NLP, Matplotlib</div>
+     <div class="mb-2 text-white/80 text-sm">Analyzed chat exports for user insights, engagement patterns, sentiment and wordclouds with automated reporting.</div>
+     <a href="https://github.com/Bibek-101/WhatsApp-Chat-Analysis.git" class="inline-block mt-2 text-cyan-300 bg-[#1b293a]/40 px-3 py-1 rounded-lg border border-cyan-200 hover:bg-cyan-300 hover:text-black" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+
+    <div class="glass-morph rounded-xl px-7 py-7 shadow-lg hover:scale-105 transition">
+     <div class="mb-2 text-xl font-bold text-cyan-300">Medicine Recommendation System</div>
+     <div class="mb-1 text-indigo-300 text-xs">Python, ML, Flask</div>
+     <div class="mb-2 text-white/80 text-sm">Smart web app suggesting medicines based on symptoms using ML and curated datasets—optimizing safe, fast recommendations.</div>
+     <a href="https://github.com/Bibek-101/Medicine-Recommendation-System.git" class="inline-block mt-2 text-cyan-300 bg-[#1b293a]/40 px-3 py-1 rounded-lg border border-cyan-200 hover:bg-cyan-300 hover:text-black" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+
+</section>
+
+<!-- References / Achievements Section -->
+<section id="references" class="container mx-auto px-3 py-20 section-glass" data-aos="fade-up">
+  <h2 class="text-3xl font-heading font-bold mb-10 text-center text-cyan-200">References & Achievements</h2>
+  <div class="flex flex-wrap gap-7 justify-center">
+    <div class="glass-morph min-w-[310px] rounded-2xl px-7 py-6 shadow-lg hover:scale-105 transition">
+      <div class="font-semibold text-cyan-200 mb-2">Bibek Kumar Patro</div>
+      <div class="text-white/80 text-base">Analyzing chat data taught me to convert raw text into insights, mastering data wrangling and visualization techniques.</div>
+    </div>
+    <div class="glass-morph min-w-[310px] rounded-2xl px-7 py-6 shadow-lg hover:scale-105 transition">
+      <div class="font-semibold text-cyan-200 mb-2">Bibek Kumar Patro</div>
+      <div class="text-white/80 text-base">Building medicine recommendation systems pushed me to design AI with care and accuracy for real-world applications.</div>
+    </div>
+    <div class="glass-morph min-w-[310px] rounded-2xl px-7 py-6 shadow-lg hover:scale-105 transition">
+      <div class="font-semibold text-cyan-200 mb-2">Bibek Kumar Patro</div>
+      <div class="text-white/80 text-base">Teamwork, curiosity, and creative problem-solving are my biggest enablers for technology success.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container mx-auto px-3 py-20 section-glass" data-aos="fade-up">
+  <h2 class="text-3xl font-heading font-bold mb-8 text-cyan-200 text-center">Contact Me</h2>
+  <form id="contactForm" class="max-w-xl mx-auto bg-[#283350cf] glass-morph p-8 rounded-2xl space-y-7 shadow-lg">
+    <div>
+      <label for="name" class="block mb-1 text-cyan-300 font-semibold">Name</label>
+      <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded-lg bg-[#172242]/60 border-2 border-cyan-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"/>
+    </div>
+    <div>
+      <label for="email" class="block mb-1 text-cyan-300 font-semibold">Email</label>
+      <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded-lg bg-[#172242]/60 border-2 border-cyan-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"/>
+    </div>
+    <div>
+      <label for="message" class="block mb-1 text-cyan-300 font-semibold">Message</label>
+      <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 rounded-lg bg-[#172242]/60 border-2 border-cyan-300 focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"></textarea>
+    </div>
+    <button type="submit" class="w-full py-3 rounded-xl font-bold bg-gradient-to-br from-cyan-400 to-indigo-400 hover:scale-105 transition text-black text-lg shadow-lg">Send Message</button>
+  </form>
+  <div class="flex flex-col sm:flex-row gap-5 justify-center items-center mt-12 text-base text-white/80">
+    <div><i class="fa fa-phone-alt text-cyan-300 mr-2"></i>+91 7205293190</div>
+    <div><i class="fa fa-envelope text-cyan-300 mr-2"></i><a href="mailto:bibek.patro.101@gmail.com" class="text-cyan-300 hover:underline">bibek.patro.101@gmail.com</a></div>
+    <div><i class="fa fa-map-marker-alt text-cyan-300 mr-2"></i>Hinjilicut, Ganjam, Odisha</div>
+  </div>
+  <div class="flex justify-center gap-7 mt-8">
+    <a href="https://www.linkedin.com/in/bibek-kumar-patro-43435333a" target="_blank" class="text-cyan-300 text-2xl hover:text-indigo-400 transition" rel="noopener"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/Bibek-101/Bibek-kumar" target="_blank" class="text-cyan-300 text-2xl hover:text-indigo-400 transition" rel="noopener"><i class="fab fa-github"></i></a>
+    <a href="mailto:bibek.patro.101@gmail.com" class="text-cyan-300 text-2xl hover:text-indigo-400 transition" rel="noopener"><i class="fa fa-envelope"></i></a>
+  </div>
+</section>
+
+<!-- Animate On Scroll JS + Typewriter Effect + Cursor + Scroll Progress + Dark/Light -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.19.0/dist/core.js"></script>
+<script>
+  AOS.init({duration: 1200, once:true});
+  new Typewriter('#typewriter', {
+    loop: true,
+    autoStart: true,
+    delay: 51,
+    strings: [
+      "Full Stack Developer",
+      "AI Enthusiast",
+      "Problem Solver"
+    ]
+  });
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  document.body.addEventListener("mousemove", e => {
+    cursor.style.left = (e.clientX - 15) + "px";
+    cursor.style.top = (e.clientY - 15) + "px";
+  });
+  document.querySelectorAll('a,button,.glow-btn').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+  });
+  // Scroll progress bar
+  window.addEventListener("scroll", () => {
+    var s = document.body.scrollTop || document.documentElement.scrollTop,
+      sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('scrollProgress').style.width = (100 * s / sh) + "%";
+  });
+  // Dark/Light mode
+  const darkBtn=document.getElementById('darkModeBtn');
+  darkBtn.onclick=()=>{
+    document.body.classList.toggle('bg-white');
+    document.body.classList.toggle('text-gray-900');
+    if(document.body.classList.contains('bg-white')) {
+      document.body.style.background='linear-gradient(120deg,#f8fcf8 65%,#b3e5f8 100%)';
+      darkBtn.innerHTML='<i class="fa fa-sun"></i>';
+    } else {
+      document.body.style.background='linear-gradient(120deg,#253664 55%,#55e5ff 100%)';
+      darkBtn.innerHTML='<i class="fa fa-moon"></i>';
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bibek Kumar Patro | Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- FontAwesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- AOS Animate on Scroll CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #43a8ffd9;
+      border-radius: 4px;
+    }
+
+    /* Custom cursor */
+    #cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 28px;
+      height: 28px;
+      border: 2px solid #43a8ff;
+      border-radius: 9999px;
+      pointer-events: none;
+      mix-blend-mode: exclusion;
+      transition: transform 0.15s ease-out;
+      transform: translate3d(calc(var(--x, 0) - 50%), calc(var(--y, 0) - 50%), 0);
+      z-index: 9999;
+      background-color: rgba(66, 168, 255, 0.1);
+    }
+    .cursor-hover {
+      transform: translate3d(calc(var(--x, 0) - 50%), calc(var(--y, 0) - 50%), 0) scale(1.5);
+      background-color: rgba(66, 168, 255, 0.3);
+      border-color: #1e40af;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      animation-fill-mode: forwards;
+      animation-name: fadeInUp;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      animation-duration: 1s;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-tr from-indigo-900 via-blue-900 to-cyan-900 scroll-smooth relative">
+  <!-- Custom cursor element -->
+  <div id="cursor"></div>
+
+  <!-- Container -->
+  <main class="min-h-screen flex flex-col justify-center items-center px-5 py-20">
+    <!-- Card section with glassmorphism -->
+    <section class="max-w-lg w-full bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl p-10 flex flex-col items-center text-center text-white" data-aos="fade-up" data-aos-once="true" style="animation-delay: 0.2s;">
+      
+      <img src="O:\\Placement\\Portfolio\\Image\\Bibek Kumar.jpg"
+     alt="Bibek Kumar Patro"
+     class="w-36 h-36 rounded-full border-4 border-blue-400 shadow-lg mb-6 animate-pulse"
+     style="animation-duration: 3s; object-position:50% 0%; object-fit:cover;" />
+
+      <h1 class="text-4xl md:text-5xl font-bold font-poppins mb-2 drop-shadow-lg">Bibek Kumar Patro</h1>
+      <p class="text-lg md:text-xl max-w-md mb-6 drop-shadow-md">
+        Welcome to my personal portfolio. Explore my work and projects as I build solutions in AI, computer vision, and full-stack development.
+      </p>
+
+      <a href="Bibek.html" class="inline-flex items-center gap-3 px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full font-semibold text-lg shadow-lg hover:scale-105 transition-transform ease-in-out duration-300 cursor-pointer select-none">
+        <span>Enter Portfolio</span>
+        <i class="fas fa-arrow-right text-white"></i>
+      </a>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.2/dist/core.min.js"></script>
+  <script>
+    // Initialize AOS animations
+    AOS.init({
+      once: true,
+      duration: 1200,
+      easing: 'ease-in-out',
+    });
+
+    // Initialize Typewriter effect inside paragraph (optional, e.g. rotate roles)
+    // Uncomment if you want rotating subheading
+    /*
+    var app = document.querySelector('.rotate-text');
+    if(app) {
+      var typewriter = new Typewriter(app, {
+        loop: true,
+        delay: 50,
+        autoStart: true,
+      });
+      typewriter.typeString('AI Specialist')
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString('Computer Vision Enthusiast')
+        .pauseFor(1500)
+        .deleteAll()
+        .typeString('Full-Stack Developer')
+        .pauseFor(1500)
+        .start();
+    }
+    */
+
+    // Custom cursor
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.setProperty('--x', e.clientX + 'px');
+      cursor.style.setProperty('--y', e.clientY + 'px');
+    });
+
+    const hoverables = document.querySelectorAll('a, button');
+    hoverables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.classList.add('cursor-hover');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('cursor-hover');
+      });
+    });
+
+    // Scroll progress bar
+    const progressBar = document.createElement('div');
+    progressBar.style.position = 'fixed';
+    progressBar.style.top = '0';
+    progressBar.style.left = '0';
+    progressBar.style.height = '4px';
+    progressBar.style.background = '#4ade80'; // lime-400 green
+    progressBar.style.width = '0%';
+    progressBar.style.zIndex = '9999';
+    progressBar.style.transition = 'width 0.25s ease-out';
+    document.body.appendChild(progressBar);
+
+    window.addEventListener('scroll', () => {
+      const scrollTotal = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrollPosition = window.scrollY;
+      const width = (scrollPosition / scrollTotal) * 100;
+      progressBar.style.width = width + '%';
+    });
+
+    // Dark/Light toggle (Optional enhancement)
+    const darkToggleBtn = document.createElement('button');
+    darkToggleBtn.textContent = '☀️';
+    darkToggleBtn.style.position = 'fixed';
+    darkToggleBtn.style.bottom = '1rem';
+    darkToggleBtn.style.right = '1rem';
+    darkToggleBtn.style.background = 'rgba(255,255,255,0.3)';
+    darkToggleBtn.style.border = 'none';
+    darkToggleBtn.style.borderRadius = '50%';
+    darkToggleBtn.style.width = '44px';
+    darkToggleBtn.style.height = '44px';
+    darkToggleBtn.style.fontSize = '22px';
+    darkToggleBtn.style.cursor = 'pointer';
+    darkToggleBtn.style.zIndex = '10000';
+    document.body.appendChild(darkToggleBtn);
+
+    darkToggleBtn.onclick = () => {
+      if(document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        darkToggleBtn.textContent = '☀️';
+      } else {
+        document.documentElement.classList.add('dark');
+        darkToggleBtn.textContent = '🌙';
+      }
+    };
+  </script>
+</body>
+</html>
